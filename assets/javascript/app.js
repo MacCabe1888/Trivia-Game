@@ -1,39 +1,38 @@
 $(document).ready(function() {
 
-    let correct = 0;
-    let incorrect = 0;
-
-    let time = 16;
     var intervalID;
 
+    $("#timer").hide();
+    $("#question").hide();
     $("#answer-choices").hide();
+    $("#results-screen").hide();
 
-    $("#start").on("click", reset);
+    $(".start").on("click", reset);
 
     function reset() {
         trivia = [
-            ["1", ["1", "b", "c", "d", "e"], "1"],
-            ["2", ["a", "2", "c", "d", "e"], "2"],
-            ["3", ["a", "b", "3", "d", "e"], "3"],
-            ["4", ["a", "b", "c", "4", "e"], "4"],
-            ["5", ["a", "b", "c", "d", "5"], "5"],
-            ["6", ["1", "b", "c", "d", "e"], "1"],
-            ["7", ["a", "2", "c", "d", "e"], "2"],
-            ["8", ["a", "b", "3", "d", "e"], "3"], 
-            ["9", ["a", "b", "c", "4", "e"], "4"], 
-            ["10", ["a", "b", "c", "d", "5"], "5"],
-            ["11", ["1", "b", "c", "d", "e"], "1"],
-            ["12", ["a", "2", "c", "d", "e"], "2"], 
-            ["13", ["a", "b", "3", "d", "e"], "3"], 
-            ["14", ["a", "b", "c", "4", "e"], "4"], 
-            ["15", ["a", "b", "c", "d", "5"], "5"],
-            ["16", ["1", "b", "c", "d", "e"], "1"], 
-            ["17", ["a", "2", "c", "d", "e"], "2"], 
-            ["18", ["a", "b", "3", "d", "e"], "3"], 
-            ["19", ["a", "b", "c", "4", "e"], "4"], 
-            ["20", ["a", "b", "c", "d", "5"], "5"]
+            ["1", ["1", "b", "c", "d"], "1"],
+            ["2", ["a", "2", "c", "d"], "2"],
+            ["3", ["a", "b", "3", "d"], "3"],
+            ["4", ["a", "b", "c", "4"], "4"],
+            ["5", ["a", "b", "c", "d"], "a"],
+            ["6", ["1", "b", "c", "d"], "1"],
+            ["7", ["a", "2", "c", "d"], "2"],
+            ["8", ["a", "b", "3", "d"], "3"], 
+            ["9", ["a", "b", "c", "4"], "4"], 
+            ["10", ["a", "b", "c", "d"], "a"],
+            ["11", ["1", "b", "c", "d"], "1"],
+            ["12", ["a", "2", "c", "d"], "2"], 
+            ["13", ["a", "b", "3", "d"], "3"], 
+            ["14", ["a", "b", "c", "4"], "4"], 
+            ["15", ["a", "b", "c", "d"], "a"],
+            ["16", ["1", "b", "c", "d"], "1"], 
+            ["17", ["a", "2", "c", "d"], "2"], 
+            ["18", ["a", "b", "3", "d"], "3"], 
+            ["19", ["a", "b", "c", "4"], "4"], 
+            ["20", ["a", "b", "c", "d"], "a"]
         ];
-        time = 16;
+        time = 15;
         correct = 0;
         incorrect = 0;
         questionsRemaining = trivia.length;
@@ -41,10 +40,9 @@ $(document).ready(function() {
     }
 
     function start() {
-        $("#start").hide();
+        $(".start").hide();
         $("#timer").show();
         $("#question").show();
-        //$("#answer-choices").show();
         $("#results-screen").hide();
         i = Math.floor(Math.random() * questionsRemaining);
         question = trivia[i][0];
@@ -57,13 +55,12 @@ $(document).ready(function() {
         $("#1").html(choices[1]);
         $("#2").html(choices[2]);
         $("#3").html(choices[3]);
-        $("#4").html(choices[4]);
         $("#answer-choices").show();
     }
 
     function countdown() {
         time--;
-        $("#timer").html("Time Remaining: " + time + "s");
+        $("#timer").html("Time Remaining: " + time);
         if (time === 0) {
             timeout();
             results();
@@ -74,7 +71,6 @@ $(document).ready(function() {
     $("#1").on("click", checkAnswer(1));
     $("#2").on("click", checkAnswer(2));
     $("#3").on("click", checkAnswer(3));
-    $("#4").on("click", checkAnswer(4));
 
     function checkAnswer(j) {
         return function() {
@@ -92,17 +88,17 @@ $(document).ready(function() {
 
     function correctAnswer() {
         correct++;
-        $("#results-screen").html("Congratulations! You chose the right answer!");
+        $("#results-screen").html("&#9884; Congratulations! You chose the right answer! &#9884;");
     }
 
     function incorrectAnswer() {
         incorrect++;
-        $("#results-screen").html("Better luck next time! The correct answer was: " + answer);
+        $("#results-screen").html("&#9884; Better luck next time! The correct answer was: " + answer + " &#9884;");
     }
 
     function timeout() {
         incorrect++;
-        $("#results-screen").html("Time's up! The correct answer was: " + answer);
+        $("#results-screen").html("&#9884; Time's up! The correct answer was: " + answer + " &#9884;");
     }
 
     function results() {
@@ -122,8 +118,8 @@ $(document).ready(function() {
 
     function end() {
         clearInterval(intervalID);
-        $("#results-screen").html("Game over! Correct answers: " + correct + " Incorrect answers: " + incorrect + " Press Start to play again!");
-        $("#start").show();
+        $("#results-screen").html("<p>&#9884; &#9884; &#9884;</p><p>Game over!</p><p>Correct answers: " + correct + "</p><p>Incorrect answers: " + incorrect + "</p><p>Press Start to play again!</p><p>&#9884; &#9884; &#9884;</p>");
+        $(".start").show();
         $("#timer").hide();
         $("#question").hide();
         $("#answer-choices").hide();

@@ -7,27 +7,52 @@
     <title>Trivia Game</title>
     <!--link to jQuery-->
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <!--link to Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Codystar|Rye|UnifrakturMaguntia" rel="stylesheet">
     <!--link to local CSS file-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-    
-    <button id="start">Start</button>
 
-    <div id="timer"></div>
+    <div class="container">
 
-    <div id="question"></div>
+        <header>
+            <h1>Mardi Gras Mayhem</h1>
+        </header>
 
-    <div id="answer-choices">
-        <button id="0"></button>
-        <button id="1"></button>
-        <button id="2"></button>
-        <button id="3"></button>
-        <button id="4"></button>
+        <div class="timer">
+            <div id="timer">Time Remaining: 15</div>
+        </div>
+
+        <div id="question"></div>
+
+        <div id="answer-choices">
+            <div class="row">
+                <div class="left-button">
+                    <p><button id="0"></button></p>
+                </div>
+                <div class="right-button">
+                    <p><button id="1"></button></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="left-button">
+                    <p><button id="2"></button></p>
+                </div>
+                <div class="right-button">
+                    <p><button id="3"></button></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="results-screen"></div>
+
+        <button class="start">
+            <h1 id="start">Start!</h1>
+        </button>
+
     </div>
-
-    <div id="results-screen"></div>
-
+        
     <!--link to JavaScript-->
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 

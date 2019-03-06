@@ -1,0 +1,109 @@
+body{
+    display: flex;
+    justify-content: center;
+    background: url(../images/triangular.png);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    background: slateblue;
+    border: inset rebeccapurple 5px;
+    margin: 35px 0;
+    padding: 2.5%;
+    padding-bottom: 6.5%;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    font-size: 225%;
+    font-family: 'Codystar', cursive;
+    color: gold;
+    border: dotted gold 5px;
+}
+
+h1{
+    text-align: center;
+    margin: 0;
+}
+
+.timer{
+    display: flex;
+    justify-content: center;
+}
+
+#timer{
+    text-align: center;
+    width: auto;
+    font-size: 200%;
+    font-family: 'Codystar', cursive;
+    color: gold;
+    padding: 0 10px;
+    border: dotted 2px gold;
+    margin-top: 40px;
+}
+
+#question{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-size: 200%;
+    font-family: 'Rye', cursive;
+    color: gold;
+    padding: 0 10px;
+    border: dotted 2px gold;
+    margin-top: 40px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 80px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    background: palegoldenrod;
+    border: solid 2px gold;
+}
+
+.left-button{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.right-button{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#results-screen{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: auto;
+    padding: 0 10px;
+    margin: auto;
+    margin-top: 5.5%;
+    text-align: center;
+    font-size: 200%;
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: gold;
+    text-shadow: 3px 3px forestgreen;
+}
+
+.start{
+    font-family: 'Rye', cursive;
+    color: rebeccapurple;
+    width: auto;
+    padding: 0 10px;
+    margin: auto;
+    margin-top: 6.5%;
+}
