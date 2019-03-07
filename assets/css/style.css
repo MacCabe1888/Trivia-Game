@@ -12,8 +12,7 @@ body{
     background: slateblue;
     border: inset rebeccapurple 5px;
     margin: 35px 0;
-    padding: 2.5%;
-    padding-bottom: 6.5%;
+    padding: 2%;
 }
 
 header{
@@ -53,9 +52,14 @@ h1{
     font-size: 200%;
     font-family: 'Rye', cursive;
     color: gold;
+    text-align: center;
     padding: 0 10px;
     border: dotted 2px gold;
     margin-top: 40px;
+}
+
+#answer-choices{
+    margin-top: -50px;
 }
 
 .row{
@@ -70,16 +74,12 @@ button{
     justify-content: center;
     background: palegoldenrod;
     border: solid 2px gold;
+    font-family: 'Rye', cursive;
+    font-size: 32px;
 }
 
-.left-button{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-
-.right-button{
-    width: 50%;
+.answer-button{
+    width: 40%;
     display: flex;
     justify-content: center;
 }
@@ -105,5 +105,53 @@ button{
     width: auto;
     padding: 0 10px;
     margin: auto;
-    margin-top: 6.5%;
+    margin-top: 3%;
+}
+
+@media screen and (max-width: 1200px) {
+
+    header{
+        font-size: 150%;
+    }
+
+    .container{
+        padding-bottom: 2.5%;
+    }
+
+    #question{
+        font-size: 150%;
+    }
+
+    #answer-choices{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 35px;
+    }
+    
+    .row{
+        display: table;
+        width: auto;
+    }
+
+    .answer-button{
+        width: auto;
+    }
+
+    .top{
+        margin-top: -100px;
+    }
+
+    .bottom{
+        margin-top: -160px;
+    }
+
+    button{
+        font-size: 24px;
+    }
+
+    #start{
+        font-size: 32px;
+    }
+
 }
